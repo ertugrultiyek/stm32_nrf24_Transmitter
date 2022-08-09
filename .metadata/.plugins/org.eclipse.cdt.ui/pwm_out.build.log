@@ -1,0 +1,20 @@
+00:47:42 **** Incremental Build of configuration Debug for project pwm_out ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xC -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm_out.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/ertugrultiyek/STM32CubeIDE/workspace_1.5.1/pwm_out/STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm_out.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm_out.elf
+ 
+arm-none-eabi-objdump -h -S  pwm_out.elf  > "pwm_out.list"
+arm-none-eabi-objcopy  -O binary  pwm_out.elf  "pwm_out.bin"
+arm-none-eabi-size   pwm_out.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9932	     20	   1636	  11588	   2d44	pwm_out.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm_out.bin
+ 
+Finished building: pwm_out.list
+ 
+
+00:47:43 Build Finished. 0 errors, 0 warnings. (took 905ms)
+

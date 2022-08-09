@@ -1,0 +1,20 @@
+16:11:13 **** Incremental Build of configuration Debug for project io_spi_uart ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xC -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "io_spi_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/ertugrultiyek/STM32CubeIDE/workspace_1.5.1/io_spi_uart/STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="io_spi_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: io_spi_uart.elf
+ 
+arm-none-eabi-objdump -h -S  io_spi_uart.elf  > "io_spi_uart.list"
+arm-none-eabi-objcopy  -O binary  io_spi_uart.elf  "io_spi_uart.bin"
+arm-none-eabi-size   io_spi_uart.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5840	     20	   1572	   7432	   1d08	io_spi_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: io_spi_uart.bin
+ 
+Finished building: io_spi_uart.list
+ 
+
+16:11:14 Build Finished. 0 errors, 0 warnings. (took 624ms)
+

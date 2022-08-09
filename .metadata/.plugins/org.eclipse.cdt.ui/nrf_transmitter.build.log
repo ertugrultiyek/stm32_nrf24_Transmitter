@@ -1,0 +1,23 @@
+18:54:34 **** Incremental Build of configuration Debug for project nrf_transmitter ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xC -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:37:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+arm-none-eabi-g++ -o "nrf_transmitter.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/ertugrultiyek/STM32CubeIDE/workspace_1.5.1/nrf_transmitter/STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nrf_transmitter.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: nrf_transmitter.elf
+ 
+arm-none-eabi-objdump -h -S  nrf_transmitter.elf  > "nrf_transmitter.list"
+arm-none-eabi-objcopy  -O binary  nrf_transmitter.elf  "nrf_transmitter.bin"
+arm-none-eabi-size   nrf_transmitter.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20184	    160	   1904	  22248	   56e8	nrf_transmitter.elf
+Finished building: default.size.stdout
+ 
+Finished building: nrf_transmitter.bin
+ 
+Finished building: nrf_transmitter.list
+ 
+
+18:54:35 Build Finished. 0 errors, 1 warnings. (took 1s.33ms)
+
